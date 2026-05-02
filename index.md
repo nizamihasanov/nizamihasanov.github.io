@@ -23,6 +23,7 @@ Cybersecurity Engineering Student focused on Security Operations.
 {% endfor %}
 
 ## Latest Blog Posts
-{% for post in site.blog limit:10 %}
+{% assign blogposts = site.posts | where: "category", "blog" %}
+{% for post in blogposts limit:10 %}
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
