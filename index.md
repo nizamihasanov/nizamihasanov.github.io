@@ -1,25 +1,18 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
 ---
 
-# Nizami Hasanov
-
-Cybersecurity Engineering Student focused on Security Operations.
-
-## Projects
+## Featured Projects
 
 {% for project in site.projects %}
->> <a href="{{ project.url }}">{{ project.title }}</a>
+- [{{ project.title }}]({{ project.url }})
 {% endfor %}
 
 ## Latest Writeups
 
 {% assign writeups = site.posts | where: "category", "writeup" %}
 {% for post in writeups limit:5 %}
->> <a href="{{ post.url }}">{{ post.title }}</a>
+- [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
 ## Latest Blog Posts

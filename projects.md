@@ -1,10 +1,9 @@
 ---
 layout: default
 title: Projects
+permalink: /projects/
 ---
 
-{% raw %}
 {% for project in site.projects %}
-    <h2><a href="{{ project.url  }}">{{ project.title }}</a></h2>
+## [{{ project.title }}]({{ project.url }})
 {% endfor %}
-{% endraw %}
