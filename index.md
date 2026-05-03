@@ -2,6 +2,8 @@
 layout: default
 ---
 
+# Nizami Hasanov
+
 ## Featured Projects
 
 {% for project in site.projects %}
