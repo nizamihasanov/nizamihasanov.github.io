@@ -4,6 +4,12 @@ layout: default
 
 # Nizami Hasanov
 
+## Latest Internship Posts
+{% assign internship = site.posts | where: "category", "internship" %}
+{% for post in internship limit:5 %}
+- [{{ post.title }}]({{ post.url }})
+{% endfor %}
+
 ## Featured Projects
 
 {% for project in site.projects %}
