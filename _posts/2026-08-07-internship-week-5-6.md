@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Internship Log - Week 4-5"
+title: "Internship Log - Week 5-6"
 date: 2026-08-07
 category: internship
 tags: ["internship", "grc"]
