@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<style>
+  .post {
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  .post__title {
+    margin-bottom: 0.35rem;
+  }
+
+  .post__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+    align-items: center;
+    margin: 0 0 1.75rem;
+    color: #999;
+    font-size: 0.95rem;
+  }
+
+  .post__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .post__tag {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border: 1px solid #444;
+    border-radius: 3px;
+    color: #b5e853;
+    line-height: 1.4;
+  }
+
+  .post__content > * + * {
+    margin-top: 1rem;
+  }
+</style>
+
+<article class="post">
+  <h1 class="post__title">{{ page.title }}</h1>
+
+  <div class="post__meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    {% if page.tags %}
+      <span>Tags:</span>
+      <span class="post__tags">
+        {% for tag in page.tags %}
+          <span class="post__tag">{{ tag }}</span>
+        {% endfor %}
+      </span>
+    {% endif %}
+  </div>
+
+  <div class="post__content">
+    {{ content }}
+  </div>
+</article>

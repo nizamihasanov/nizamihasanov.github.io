@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<style>
+  .writeup {
+    max-width: 820px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  .writeup__title {
+    margin-bottom: 0.35rem;
+  }
+
+  .writeup__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+    align-items: center;
+    margin: 0 0 1.75rem;
+    color: #999;
+    font-size: 0.95rem;
+  }
+
+  .writeup__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .writeup__tag {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border: 1px solid #444;
+    border-radius: 3px;
+    color: #b5e853;
+    line-height: 1.4;
+  }
+
+  .writeup__divider {
+    margin: 0 0 2rem;
+  }
+
+  .writeup__content > * + * {
+    margin-top: 1rem;
+  }
+
+  .writeup__content pre {
+    margin: 1.5rem 0;
+  }
+</style>
+
+<article class="writeup">
+
+  <h1 class="writeup__title">{{ page.title }}</h1>
+
+  <div class="writeup__meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    {% if page.tags %}
+      <span>Tags:</span>
+      <span class="writeup__tags">
+        {% for tag in page.tags %}
+          <span class="writeup__tag">{{ tag }}</span>
+        {% endfor %}
+      </span>
+    {% endif %}
+  </div>
+
+  <hr class="writeup__divider">
+
+  <div class="writeup__content">
+    {{ content }}
+  </div>
+
+</article>
